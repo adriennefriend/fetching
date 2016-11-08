@@ -7,19 +7,20 @@
 <body>
     <h1>URL Validator</h1>
     <form id="url-form">
-        <p>Url</p>
+        <label for="url-input">Url</label>
         <input type="url" id="url-input">
         <input type="submit" value="Get links">
     </form>
 
     <script>
-        console.log("Hey, does this work?");
-        var userForm = document.getElementById("url-form");
-        userForm.addEventListener("submit", function(event) {
-            event.preventDefault()
+        function fetchURLs(event) {
+            event.preventDefault();
             var userInput = document.getElementById("url-input");
             console.log(userInput.value);
-        });
+        }
+        console.log("Hey, does this work?");
+        var userForm = document.getElementById("url-form");
+        userForm.addEventListener("submit", fetchURLs);
     </script>
 </body>
 </html>
