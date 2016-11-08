@@ -22,8 +22,13 @@
  	                return response.text();
                 })
                 .then(function (data) {
-                    // Magic happens here
-                    console.log(data);
+                    // Parse data from fetch
+                    console.log(data);  // shows everything
+                    var temp = document.createElement("div");
+                    temp.innerHTML = data;
+
+                    var links = temp.querySelectorAll("a");
+                    console.log(links);
                 })
                 .catch(function (error) {
                     // Log the error
