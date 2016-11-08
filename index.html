@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>URL Validator</h1>
+    <form id="url-form">
+        <p>Url</p>
+        <input type="text" id="url-input">
+        <input type="submit" value="Get links">
+    </form>
+
+    <script>
+        console.log("Hey, does this work?");
+        var userForm = document.getElementById("url-form");
+        userForm.addEventListener("submit", function(event) {
+            event.preventDefault()
+            var userInput = document.getElementById("url-input");
+            console.log(userInput.value);
+        });
+    </script>
+</body>
+</html>
