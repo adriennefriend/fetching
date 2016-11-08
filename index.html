@@ -14,7 +14,22 @@
 
     <script>
         function fetchURLs(event) {
-            event.preventDefault();
+            event.preventDefault();  // Don't submit the form
+
+            // Fetch boilerplate
+            fetch("page2.html")
+ 	            .then(function (response) {
+ 	                return response.text();
+                })
+                .then(function (data) {
+                    // Magic happens here
+                    console.log(data);
+                })
+                .catch(function (error) {
+                    // Log the error
+                    console.log(error.message);
+                });
+
             var userInput = document.getElementById("url-input");
             console.log(userInput.value);
         }
