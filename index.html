@@ -26,7 +26,10 @@
         function fetchURLs(event) {
             event.preventDefault();  // Don't submit the form
 
-            var url = input.value;
+            // Construct the URL with the proxy + the user-submitted value
+            var url = "http://localhost:8888/proxy/" + userInput.value;
+            // var url = `http://localhost:8888/proxy${input.value}`
+            // using a template literal ^^ it is the same as line 30
 
             // Fetch boilerplate
             fetch(url)
@@ -35,7 +38,7 @@
                 })
                 .then(function (data) {
                     // Parse data from fetch
-                    console.log(data);  // shows everything
+                    // console.log(data);  // shows everything (don't need to show everything)
                     var temp = document.createElement("div");
                     temp.innerHTML = data;
 
