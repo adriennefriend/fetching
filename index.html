@@ -7,7 +7,7 @@
 <body>
     <h1>URL Validator</h1>
     <form id="url-form">
-        <label for="url-input">Url</label>
+        <label for="url-input">Please input URL to retrieve links:</label>
         <input type="url" id="url-input">
         <input type="submit" value="Get links">
     </form>
@@ -33,7 +33,7 @@
             // Cleanup the linkList before fetching new links
             linkList.innerHTML = "";
 
-            // var url = `http://localhost:8888/proxy${input.value}`
+            // var url = `http://localhost:8888/proxy${input.value}` (new JS dialect)
             // using a template literal ^^ it is the same as line 30
 
             // Fetch boilerplate
@@ -43,7 +43,7 @@
                 })
                 .then(function (data) {
                     // Parse data from fetch
-                    // console.log(data);  // shows everything (don't need to show everything)
+                    // console.log(data);  // debugging aid shows everything (not necessary tho)
                     var temp = document.createElement("div");
                     temp.innerHTML = data;
 
@@ -54,8 +54,11 @@
                     for (var link of links) {
                         // <li></li>
                         var li = document.createElement("li");
-                        // <li><a href="...">...</a></li>
-                        li.appendChild(link)
+                        // <li><a></a></li>
+                        // Extract textContent to drop any child ndes in the <a></a>
+                        // li.innerHTML = `${link.textContent}: ${link.href}`   // issue is here. We are appending the link to the li element
+                        // li.innerHTML = "<a href='" + link.href + "'>" link.textContent + "</a>"; -- this line is cleaned up in 61
+                        li.innerHTML = `<a href="${link.href}">${link.textContent}</a>`;
                         // <ul><li><a>
                         linkList.appendChild(li);
                     }
