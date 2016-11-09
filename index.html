@@ -12,7 +12,17 @@
         <input type="submit" value="Get links">
     </form>
 
+    <ul id="link-list">
+        <!-- Links will be inserted here by JS -->
+    </ul>
+
     <script>
+        // DOM Elements used
+        var userForm = document.querySelector("#url-form");
+        var linkList = document.querySelector("#link-list");
+        var userInput = document.querySelector("#url-input");
+
+        // The big function :-(
         function fetchURLs(event) {
             event.preventDefault();  // Don't submit the form
 
@@ -28,18 +38,23 @@
                     temp.innerHTML = data;
 
                     var links = temp.querySelectorAll("a");
-                    console.log(links);
+                    for (var link of links) {
+                        // <li></li>
+                        var li = document.createElement("li");
+                        // <li><a href="...">...</a></li>
+                        li.appendChild(link)
+                        // <ul><li><a>
+                        linkList.appendChild(li);
+                    }
                 })
                 .catch(function (error) {
                     // Log the error
                     console.log(error.message);
                 });
 
-            var userInput = document.getElementById("url-input");
             console.log(userInput.value);
         }
-        console.log("Hey, does this work?");
-        var userForm = document.getElementById("url-form");
+        // Makes things happen
         userForm.addEventListener("submit", fetchURLs);
     </script>
 </body>
