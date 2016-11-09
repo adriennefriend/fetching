@@ -30,6 +30,9 @@
             var url = "http://localhost:8888/proxy/" + userInput.value;
             userForm.reset();   // Send input back to default state
 
+            // Cleanup the linkList before fetching new links
+            linkList.innerHTML = "";
+
             // var url = `http://localhost:8888/proxy${input.value}`
             // using a template literal ^^ it is the same as line 30
 
@@ -44,7 +47,10 @@
                     var temp = document.createElement("div");
                     temp.innerHTML = data;
 
+                    // Get all links from temp
                     var links = temp.querySelectorAll("a");
+
+                    // Append each link to the link list
                     for (var link of links) {
                         // <li></li>
                         var li = document.createElement("li");
