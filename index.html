@@ -19,15 +19,17 @@
     <script>
         // DOM Elements used
         var userForm = document.querySelector("#url-form");
-        var linkList = document.querySelector("#link-list");
         var userInput = document.querySelector("#url-input");
+        var linkList = document.querySelector("#link-list");
 
         // The big function :-(
         function fetchURLs(event) {
             event.preventDefault();  // Don't submit the form
 
+            var url = input.value;
+
             // Fetch boilerplate
-            fetch("page2.html")
+            fetch(url)
  	            .then(function (response) {
  	                return response.text();
                 })
