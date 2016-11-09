@@ -28,6 +28,8 @@
 
             // Construct the URL with the proxy + the user-submitted value
             var url = "http://localhost:8888/proxy/" + userInput.value;
+            userForm.reset();   // Send input back to default state
+
             // var url = `http://localhost:8888/proxy${input.value}`
             // using a template literal ^^ it is the same as line 30
 
