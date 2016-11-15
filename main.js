@@ -5,13 +5,13 @@ var linkList = document.querySelector("#link-list");
 
 // The big function :-(
 function fetchURLs(event) {
-    event.preventDefault();  // Don't submit the form
+    event.preventDefault();  // Don't submit the form, which triggers a page refresh
 
     // Construct the URL with the proxy + the user-submitted value
     var url = "http://localhost:8888/proxy/" + userInput.value;
-    userForm.reset();   // Send input back to default state
+    userForm.reset();   // Send input box back to default state
 
-    // Cleanup the linkList before fetching new links
+    // Cleanup the linkList before fetching new links (like, for another URL)
     linkList.innerHTML = "";
 
     // var url = `http://localhost:8888/proxy${input.value}` (new JS dialect)
@@ -36,7 +36,7 @@ function fetchURLs(event) {
                 // <li></li>
                 var li = document.createElement("li");
                 // <li><a></a></li>
-                // Extract textContent to drop any child ndes in the <a></a>
+                // Extract textContent to drop any child nodes in the <a></a>
                 // li.innerHTML = `${link.textContent}: ${link.href}`   // issue is here. We are appending the link to the li element
                 // li.innerHTML = "<a href='" + link.href + "'>" link.textContent + "</a>"; -- this line is cleaned up in 61
                 li.innerHTML = `<a href="${link.href}">${link.textContent}</a>`;
@@ -52,4 +52,4 @@ function fetchURLs(event) {
     console.log(userInput.value);
 }
 // Makes things happen
-userForm.addEventListener("submit", fetchURLs);
+userForm.addEventListener("submit", fetchURLs, false);
