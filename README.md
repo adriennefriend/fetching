@@ -24,14 +24,14 @@ you to access it through HTTP.
 recommend opening two tabs in your terminal, one for SimpleHTTPServer 
 and one for corsa.
 4. Get started with SimpleHTTPServer.
-  a) In a fresh terminal tab, cd into the project folder. 
-  b) python -m SimpleHTTPServer
+  * In a fresh terminal tab, cd into the project folder. 
+  * python -m SimpleHTTPServer
 4. Get started with corsa.
-  a) In a separate terminal tab, cd into the project folder. 
-  a) Start a virtual environment with `virtualenv corsa`
-  b) Activate with . corsa/bin/activate
-  c) `pip install corsa`
-  d) Run `corsa --allow-proxy ALL --allow-origin ALL` to start the Corsa 
+  * In a separate terminal tab, cd into the project folder. 
+  * Start a virtual environment with `virtualenv corsa`
+  * Activate with . corsa/bin/activate
+  * `pip install corsa`
+  * Run `corsa --allow-proxy ALL --allow-origin ALL` to start the Corsa 
 proxy at `http://localhost:8888/proxy/`
 4. Open Chrome and go to http://localhost:8000/
 
