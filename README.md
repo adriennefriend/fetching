@@ -51,9 +51,9 @@ there.
 ### Future hopes for this project
 
 1. Break the large function into smaller functions.
-a) Anything that touches the DOM should be pulled out. The final DOM
+* Anything that touches the DOM should be pulled out. The final DOM
 function should only be concerned with displaying on the page.
-b) Fetch should only be concerned with the network request and response.
+* Fetch should only be concerned with the network request and response.
 2. Write tests for these new, smaller functions.
 3. Make the project into a React app.
 4. Write tests for the React app.
