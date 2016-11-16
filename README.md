@@ -39,7 +39,7 @@ proxy at `http://localhost:8888/proxy/`
 
 I do not know how to test in JS (...yet.)
 
-### Further documentation
+### A note about all the comments
 
 There are a lot of comments in the file. This is because I was learning. 
 When you're learning, you often have to Google around, ask friends, play
