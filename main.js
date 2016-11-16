@@ -47,7 +47,7 @@ function fetchURLs(event) {
             // and is valid HTML, to get all "a". Store this list in the links variable.
             var links = temp.querySelectorAll("a");
 
-            // In lines 50 - 60, loop over each link, creating a new empty <li> element, and append at the end.
+            // In lines 51 - 60, loop over each link, creating a new empty <li> element, and append at the end.
             for (var link of links) {
                 // <li></li>
                 var li = document.createElement("li");
